@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'sans-serif ', 'Poppins';
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(150deg,#003C43, #77B0AA);
+    color: #ffff;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.calculator{
+    width: 100%;
+    max-width: 600px;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+.calculator h1{
+    font-size: 50px;
+
+}
+.calculator h1 span{
+    color: #0b191a;
+}
+.input-box{
+    margin: 40px 0;
+    padding: 35px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+}
+.input-box input{
+    flex: 1;
+    margin-right:20px ;
+    padding: 14px 20px;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    border-radius: 5px;
+    position: relative;
+}
+.input-box button{
+    background: #0b191a;
+    border: 0;
+    outline: 0;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+}
+.input-box input::-webkit-calendar-picker-indicator{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    position: absolute;
+    background-position: calc(100% - 10px);
+    background-size: 30px;
+    cursor: pointer;
+}
+#result{
+    font-size: 25px;
+    font-weight: 500;
+
+}
+#result span{
+    color: #0b191a;
+    
+}
+/* Styles for devices with widths less than 768px */
+@media (max-width: 768px) {
+    .calculator {
+        width: 100%; /* Full width */
+        margin-left: 0; /* Remove left margin */
+        margin-top: 20px; /* Add a smaller top margin */
+    }
+
+    /* Adjust font size for calculator h1 */
+    .calculator h1 {
+        font-size: 36px; /* Smaller font size for mobile */
+    }
+
+    /* Adjust padding and margin for input box */
+    .input-box {
+        padding: 20px; /* Smaller padding */
+        margin: 20px 0; /* Smaller top and bottom margins */
+        flex-direction: column; /* Stack input and button vertically */
+    }
+
+    /* Adjust input and button styles */
+    .input-box input, .input-box button {
+        width: 100%; /* Full width */
+        margin: 0 0 10px 0; /* Add margin for separation */
+    }
+
+    /* Adjust button padding */
+    .input-box button {
+        padding: 15px; /* Less horizontal padding */
+    }
+
+    /* Adjust the result font size */
+    #result {
+        font-size: 20px; /* Smaller font size */
+    
+}
+}

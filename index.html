@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="calculator">
+
+            <h1>AGE <span>CALCULATOR</span></h1>
+
+            <div class="input-box">
+                <input type="date" id="date">
+                <button onclick="calculateAge()">Calculate</button>
+            </div>
+            <p id="result"> </p>
+        </div>
+    </div>
+    <script>
+        let result = document.getElementById("result");
+
+        function calculateAge() {
+            let userInput = document.getElementById("date").value;
+            if (!userInput) {
+                alert("Please enter your date of birth.");
+                return;
+            }
+            // parse the dob
+            let birthDate = new Date(userInput);
+
+            let today = new Date();      // get current date
+            console.log(today);
+
+           
+            // Calculate the year diff
+            let years = today.getFullYear() - birthDate.getFullYear();
+
+            // Calculate the month and day diff
+            let months = today.getMonth() - birthDate.getMonth();
+            let days = today.getDate() - birthDate.getDate();
+
+            // Adjust the age if necessary
+            if (days < 0) {
+                months--;
+                // Get the number of days in the previous month
+                let previousMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+                days += previousMonth.getDate();
+            }
+
+            // If months are less than 0, adjust the year and month
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+
+        //     // Display the calculated age
+        //     alert(`You are ${years} years, ${months} months, and ${days} days old.`);
+        // }
+        result.innerHTML = `You are <span> ${years}</span> years , <span>${months} </span>months,
+             and <span>${days}</span> days old.`;}
+        
+        
+        // Add an event listener to the button to call the function when clicked
+        document.querySelector('button').addEventListener('click', calculateAge);
+
+    </script>
+</body>
+
+</html>
